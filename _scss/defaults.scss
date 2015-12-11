@@ -1,0 +1,47 @@
+$red: #E55C5C !global;
+$blue: #889EDC !global;
+$lbeige: #FEFEFA !global;
+$beige: #FEFCEC !global;
+$dbeige: #FAF4DD !global;
+$black: #5C5C5C !global;
+
+h1,h2,h3,h4,h5 {
+	font-family: "Karma";
+	font-weight: normal;
+}
+
+h1 { font-size: 24px; }
+h2 { font-size: 22px; }
+h3 { font-size: 20px; }
+h4 { font-size: 18px; }
+h5 { font-size: 16px; }
+p {	font-size:14px; }	
+
+/* standard input */
+input {
+	padding:15px;
+	font-size:14px;
+	border:0;
+	background-color: $dbeige;
+	color: $black;
+	width:90%;
+	margin-bottom:12px;
+}
+/* standard button */
+button {
+	font-size:14px;
+	padding:10px 20px;
+	border:0;
+	background-color: $red;
+	color:white;
+}
+
+/* standard links */
+a {	text-decoration: underline;	color:$black; }
+a:visited {	color:$black;	}
+a:hover {	color: $blue; }
+
+/* utility functions */
+.left {text-align: left; } 
+.center {text-align: center; } 
+.right {text-align: right; } 

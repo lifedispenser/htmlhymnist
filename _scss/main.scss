@@ -1,0 +1,48 @@
+@lost gutter 0px;
+@import "reset";
+@import "defaults";
+
+body {
+	background-color: $beige;
+	font-family: "Avenir Next";
+	#top {
+		position: absolute;
+		top:0;
+		left:0;
+		z-index: 1;
+		height:100px;
+		width:100%;
+		#logo {
+			float:left;
+			padding:2rem 2.4rem;
+			position: relative;
+			font-family: "Cherry Swash";
+			font-size:24px;
+			font-weight: normal;
+			color: $red;
+		}
+		#menu {
+			float:right;
+			vertical-align: center;
+			padding:2.4rem 3rem;
+			font-size: 14px;
+		}
+	}
+
+	#main {
+		@media(min-width: 768px) { height:100%;  lost-utility: clearfix; }
+		@media(max-width: 767px) { padding-top:6rem; }
+		#left { background-color: $beige; }
+		#right { background-color: $lbeige; }	
+		#left, #right {
+			@media(min-width: 768px) { lost-align: center; lost-column:1/2; }
+			@media(max-width: 767px) { padding:4rem 2rem; }
+			height: inherit;
+			.box {
+				max-width: 400px;
+				margin:0 auto;
+				text-align:center;
+			}
+		}
+	}
+}
