@@ -1,0 +1,29 @@
+.Albums {
+	.wrapper {
+		width:90%;
+		.profile {
+			margin-bottom:2rem;
+			lost-utility: clearfix;
+			.col1 {lost-column: 1/4 0; }
+			.col2 {lost-column: 3/4 0; }	
+		}
+		.full-row {
+			lost-column: 1/1;
+			background-color: $dbeige;
+			padding: 2rem 0;
+			margin-bottom:2rem;
+		}
+		.album {
+			list-style-type: none;
+			lost-utility: clearfix;
+			margin-bottom:1rem;
+			.col1 {lost-column: 1/4 0; }
+			.col2 {lost-column: 2/4 0; padding-top:.5rem;
+				h2 {
+					font-size:17px;
+				}
+			}
+			.col3 {lost-column: 1/4 0; padding-top:.5rem;}
+		}
+	}
+}
