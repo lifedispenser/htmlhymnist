@@ -68,10 +68,6 @@ a:visited {
   font-weight: bold;
   text-decoration: none; }
 
-.title {
-  display: inline-block;
-  margin-bottom: 2em; }
-
 .title a {
   color: #a00; }
 
@@ -170,7 +166,7 @@ input {
   border: 0;
   background-color: #FAF4DD;
   color: #5C5C5C;
-  width: 90%;
+  width: calc(100% - 30px);
   margin-bottom: 12px; }
 
 /* standard button */
@@ -192,6 +188,25 @@ a:visited {
 a:hover {
   color: #889EDC; }
 
+a.full-row {
+  width: calc(99.99% * 1/1 - (0px - 0px * 1/1));
+  padding: 2rem 0;
+  margin-bottom: 2rem; }
+
+a.full-row:nth-child(n) {
+  float: left;
+  margin-right: 0px;
+  clear: none; }
+
+a.full-row:last-child {
+  margin-right: 0; }
+
+a.full-row:nth-child(1n) {
+  margin-right: 0; }
+
+a.full-row:nth-child(1n + 1) {
+  clear: left; }
+
 /* utility functions */
 .left {
   text-align: left; }
@@ -202,10 +217,14 @@ a:hover {
 .right {
   text-align: right; }
 
+.red {
+  color: #E55C5C; }
+
 body {
   background-color: #FEFCEC;
   font-family: "Avenir Next"; }
 
+/* logo + menu area */
 #top {
   position: absolute;
   top: 0;
@@ -245,6 +264,10 @@ body {
 
 #left {
   background-color: #FEFCEC; }
+  #left .dark {
+    background-color: #FAF4DD; }
+    #left .dark input {
+      background-color: #FEFCEC; }
 
 #right {
   background-color: #FEFEFA; }
@@ -265,6 +288,7 @@ body {
     #left:nth-child(2n + 1), #right:nth-child(2n + 1) {
     clear: left; } }
   #left .wrapper, #right .wrapper {
+    width: 90%;
     max-width: 600px;
     margin: 0 auto;
     text-align: center; }
@@ -272,9 +296,11 @@ body {
     max-width: 900px; }
   #left .wrapper.small, #right .wrapper.small {
     max-width: 400px; }
+  #left .wrapper.full, #right .wrapper.full {
+    max-width: 100%;
+    width: 100%; }
 
 /*
-each column can have these 2 states
 .center is when you have pretty minimal content and you want it in the middle
 .fixed-top is when you have content that needs to scroll or starts from the top.
 */
@@ -297,113 +323,216 @@ each column can have these 2 states
 @media (min-width: 768px) {
   #left.fixed-top, #right.fixed-top {
     position: relative;
-    top: 10%;
-    height: 90%;
+    top: 100px;
+    height: calc(99.99% - 100px);
     overflow: auto; } }
 
 @media (max-width: 767px) {
   #left.fixed-top, #right.fixed-top {
     padding: 4rem 2rem; } }
 
-.Albums .wrapper {
+.albums .wrapper {
   width: 90%; }
-  .Albums .wrapper .profile {
+  .albums .wrapper .profile {
     margin-bottom: 2rem;
     *zoom: 1; }
-  .Albums .wrapper .profile:before {
+  .albums .wrapper .profile:before {
   content: '';
   display: table; }
-  .Albums .wrapper .profile:after {
+  .albums .wrapper .profile:after {
   content: '';
   display: table;
   clear: both; }
-    .Albums .wrapper .profile .col1 {
+    .albums .wrapper .profile .col1 {
       width: calc(99.99% * 1/4 - (0px - 0px * 1/4)); }
-    .Albums .wrapper .profile .col1:nth-child(n) {
+    .albums .wrapper .profile .col1:nth-child(n) {
   float: left;
   margin-right: 0px;
   clear: none; }
-    .Albums .wrapper .profile .col1:last-child {
+    .albums .wrapper .profile .col1:last-child {
   margin-right: 0; }
-    .Albums .wrapper .profile .col1:nth-child(0n) {
+    .albums .wrapper .profile .col1:nth-child(0n) {
   margin-right: 0; }
-    .Albums .wrapper .profile .col1:nth-child(0n + 1) {
+    .albums .wrapper .profile .col1:nth-child(0n + 1) {
   clear: left; }
-    .Albums .wrapper .profile .col2 {
+    .albums .wrapper .profile .col2 {
       width: calc(99.99% * 3/4 - (0px - 0px * 3/4)); }
-    .Albums .wrapper .profile .col2:nth-child(n) {
+    .albums .wrapper .profile .col2:nth-child(n) {
   float: left;
   margin-right: 0px;
   clear: none; }
-    .Albums .wrapper .profile .col2:last-child {
+    .albums .wrapper .profile .col2:last-child {
   margin-right: 0; }
-    .Albums .wrapper .profile .col2:nth-child(0n) {
+    .albums .wrapper .profile .col2:nth-child(0n) {
   margin-right: 0; }
-    .Albums .wrapper .profile .col2:nth-child(0n + 1) {
+    .albums .wrapper .profile .col2:nth-child(0n + 1) {
   clear: left; }
-  .Albums .wrapper .full-row {
-    width: calc(99.99% * 1/1 - (0px - 0px * 1/1));
-    background-color: #FAF4DD;
-    padding: 2rem 0;
-    margin-bottom: 2rem; }
-  .Albums .wrapper .full-row:nth-child(n) {
-  float: left;
-  margin-right: 0px;
-  clear: none; }
-  .Albums .wrapper .full-row:last-child {
-  margin-right: 0; }
-  .Albums .wrapper .full-row:nth-child(1n) {
-  margin-right: 0; }
-  .Albums .wrapper .full-row:nth-child(1n + 1) {
-  clear: left; }
-  .Albums .wrapper .album {
+  .albums .wrapper .full-row {
+    background-color: #FAF4DD; }
+  .albums .wrapper .album {
     list-style-type: none;
     *zoom: 1;
     margin-bottom: 1rem; }
-  .Albums .wrapper .album:before {
+  .albums .wrapper .album:before {
   content: '';
   display: table; }
-  .Albums .wrapper .album:after {
+  .albums .wrapper .album:after {
   content: '';
   display: table;
   clear: both; }
-    .Albums .wrapper .album .col1 {
+    .albums .wrapper .album .col1 {
       width: calc(99.99% * 1/4 - (0px - 0px * 1/4)); }
-    .Albums .wrapper .album .col1:nth-child(n) {
+    .albums .wrapper .album .col1:nth-child(n) {
   float: left;
   margin-right: 0px;
   clear: none; }
-    .Albums .wrapper .album .col1:last-child {
+    .albums .wrapper .album .col1:last-child {
   margin-right: 0; }
-    .Albums .wrapper .album .col1:nth-child(0n) {
+    .albums .wrapper .album .col1:nth-child(0n) {
   margin-right: 0; }
-    .Albums .wrapper .album .col1:nth-child(0n + 1) {
+    .albums .wrapper .album .col1:nth-child(0n + 1) {
   clear: left; }
-    .Albums .wrapper .album .col2 {
+    .albums .wrapper .album .col2 {
       width: calc(99.99% * 2/4 - (0px - 0px * 2/4));
       padding-top: .5rem; }
-    .Albums .wrapper .album .col2:nth-child(n) {
+    .albums .wrapper .album .col2:nth-child(n) {
   float: left;
   margin-right: 0px;
   clear: none; }
-    .Albums .wrapper .album .col2:last-child {
+    .albums .wrapper .album .col2:last-child {
   margin-right: 0; }
-    .Albums .wrapper .album .col2:nth-child(0n) {
+    .albums .wrapper .album .col2:nth-child(0n) {
   margin-right: 0; }
-    .Albums .wrapper .album .col2:nth-child(0n + 1) {
+    .albums .wrapper .album .col2:nth-child(0n + 1) {
   clear: left; }
-      .Albums .wrapper .album .col2 h2 {
+      .albums .wrapper .album .col2 h2 {
         font-size: 17px; }
-    .Albums .wrapper .album .col3 {
+    .albums .wrapper .album .col3 {
       width: calc(99.99% * 1/4 - (0px - 0px * 1/4));
       padding-top: .5rem; }
-    .Albums .wrapper .album .col3:nth-child(n) {
+    .albums .wrapper .album .col3:nth-child(n) {
   float: left;
   margin-right: 0px;
   clear: none; }
-    .Albums .wrapper .album .col3:last-child {
+    .albums .wrapper .album .col3:last-child {
   margin-right: 0; }
-    .Albums .wrapper .album .col3:nth-child(0n) {
+    .albums .wrapper .album .col3:nth-child(0n) {
   margin-right: 0; }
-    .Albums .wrapper .album .col3:nth-child(0n + 1) {
+    .albums .wrapper .album .col3:nth-child(0n + 1) {
   clear: left; }
+
+.new-album #left .add-img {
+  *zoom: 1;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  background-color: #FFF9DE;
+  display: block;
+  padding: 75px 0;
+  margin-bottom: 3rem;
+  color: #9B9B9B;
+  text-decoration: none;
+  font-size: 16px; }
+
+.new-album #left .add-img:before {
+  content: '';
+  display: table; }
+
+.new-album #left .add-img:after {
+  content: '';
+  display: table;
+  clear: both; }
+
+.new-album #left .dark {
+  padding-top: 2rem; }
+  .new-album #left .dark .wrapper {
+    text-align: left !important; }
+    @media (max-width: 500px) {
+      .new-album #left .dark .wrapper {
+        padding: 0 1rem; } }
+    @media (min-width: 750px) and (max-width: 850px) {
+      .new-album #left .dark .wrapper {
+        padding: 0 1rem; } }
+  .new-album #left .dark input::-webkit-input-placeholder {
+    color: #5C5C5C; }
+  .new-album #left .dark input:-moz-placeholder {
+    color: #5C5C5C; }
+  .new-album #left .dark input::-moz-placeholder {
+    color: #5C5C5C; }
+  .new-album #left .dark input:-ms-input-placeholder {
+    color: #5C5C5C; }
+  .new-album #left .dark .title {
+    margin-bottom: .9rem; }
+  .new-album #left .dark .year {
+    width: calc(33% - 30px); }
+  .new-album #left .dark .author {
+    width: calc(63% - 30px);
+    margin-left: 4%; }
+  .new-album #left .dark .checkbox {
+    width: auto;
+    margin: 1rem 0 1.3rem; }
+  .new-album #left .dark .statuses {
+    color: gray;
+    padding-bottom: 2.2rem; }
+    .new-album #left .dark .statuses .left {
+      text-align: left; }
+    .new-album #left .dark .statuses .right {
+      float: right; }
+  .new-album #left .dark .large {
+    font-family: "Karma";
+    background-color: #889EDC;
+    width: 100%;
+    float: left;
+    font-size: 20px;
+    padding: 1rem 0 .7rem;
+    margin-bottom: 2rem;
+    margin-top: -1.8rem; }
+
+.new-album #right {
+  *zoom: 1; }
+
+.new-album #right:before {
+  content: '';
+  display: table; }
+
+.new-album #right:after {
+  content: '';
+  display: table;
+  clear: both; }
+  .new-album #right h2 {
+    margin-bottom: 2rem; }
+  .new-album #right .full-row {
+    background-color: #FAF4DD;
+    font-size: 18px;
+    padding: 1.1rem 0; }
+  .new-album #right .songs {
+    font-family: "Karma";
+    list-style: none;
+    font-size: 16px;
+    line-height: 28px;
+    width: 99%;
+    clear: both; }
+    .new-album #right .songs li {
+      display: block;
+      position: relative; }
+      .new-album #right .songs li .num {
+        cursor: move;
+        display: inline-block;
+        width: 30px; }
+      .new-album #right .songs li input {
+        width: calc(100% - 47px);
+        padding: 5px;
+        margin: 0; }
+      .new-album #right .songs li .title {
+        cursor: edit;
+        display: list-item;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 90%; }
+      .new-album #right .songs li .min {
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: 0; }

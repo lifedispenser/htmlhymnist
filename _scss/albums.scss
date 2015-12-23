@@ -1,4 +1,4 @@
-.Albums {
+.albums {
 	.wrapper {
 		width:90%;
 		.profile {
@@ -8,10 +8,7 @@
 			.col2 {lost-column: 3/4 0; }	
 		}
 		.full-row {
-			lost-column: 1/1;
 			background-color: $dbeige;
-			padding: 2rem 0;
-			margin-bottom:2rem;
 		}
 		.album {
 			list-style-type: none;

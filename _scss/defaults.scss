@@ -4,6 +4,14 @@ $lbeige: #FEFEFA !global;
 $beige: #FEFCEC !global;
 $dbeige: #FAF4DD !global;
 $black: #5C5C5C !global;
+$bbeige: #FFF9DE !global;
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {@content}
+	&:-moz-placeholder           {@content}
+	&::-moz-placeholder          {@content}
+	&:-ms-input-placeholder      {@content}  
+}
 
 h1,h2,h3,h4,h5 {
 	font-family: "Karma";
@@ -24,7 +32,7 @@ input {
 	border:0;
 	background-color: $dbeige;
 	color: $black;
-	width:90%;
+	width:calc(100% - 30px);
 	margin-bottom:12px;
 }
 /* standard button */
@@ -40,8 +48,16 @@ button {
 a {	text-decoration: underline;	color:$black; }
 a:visited {	color:$black;	}
 a:hover {	color: $blue; }
+a.full-row {
+	lost-column: 1/1;
+	padding: 2rem 0;
+	margin-bottom:2rem;
+}
 
 /* utility functions */
 .left {text-align: left; } 
 .center {text-align: center; } 
 .right {text-align: right; } 
+.red {
+	color:$red;
+}

@@ -1,0 +1,108 @@
+.new-album {
+	#left {
+		.add-img {
+			lost-center: 200px;
+			height:100%;
+			background-color: $bbeige;
+			display:block;
+			padding:75px 0;
+			margin-bottom:3rem;
+			color: #9B9B9B;
+			text-decoration: none;
+			font-size:16px;
+		}
+		.dark {
+			.wrapper {
+				text-align:left!important;
+				@media(max-width: 500px) { padding:0 1rem; }
+				@media(min-width: 750px) and (max-width: 850px) { padding:0 1rem; }
+			}
+			padding-top: 2rem;
+			input {
+				@include placeholder { color:$black; }
+			}
+			.title {
+				margin-bottom: .9rem;
+			}
+			.year {
+				width:calc(33% - 30px);
+			}
+			.author {
+				width:calc(63% - 30px);
+				margin-left:4%;
+			}
+			.checkbox {
+				width:auto;
+				margin:1rem 0 1.3rem;
+			}
+			.statuses {
+				color:gray;
+				padding-bottom:2.2rem;
+
+				.left {
+					text-align:left;
+				}
+				.right {
+					float:right;
+				}
+			}
+			.large {
+				font-family:"Karma";
+				background-color: $blue;
+				width:100%;
+				float:left;
+				font-size:20px;
+				padding:1rem 0 .7rem;
+				margin-bottom:2rem;
+				margin-top:-1.8rem;
+			}
+		}
+	}
+	#right {
+		h2 {
+			margin-bottom: 2rem;
+		}
+		lost-utility: clearfix;
+		.full-row {
+			background-color: $dbeige;
+			font-size: 18px;
+			padding: 1.1rem 0;
+		}
+		.songs {
+			font-family: "Karma";
+			list-style: none;
+			font-size: 16px;
+			line-height: 28px;
+			width: 99%;
+			clear: both;
+			li {
+				display: block;
+				position: relative;
+				.num {
+					cursor: move;
+					display: inline-block;
+					width: 30px;
+				}
+				input {
+					width:calc(100% - 47px);
+					padding:5px;
+					margin:0;
+				}
+				.title {
+					cursor: edit;
+					display: list-item;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					overflow:hidden;
+					max-width: 90%;
+				}
+				.min {
+					cursor:pointer;
+					position: absolute;
+					right:0;
+					top:0;
+				}
+			}
+		}
+	}
+}

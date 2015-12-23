@@ -6,6 +6,8 @@ body {
 	background-color: $beige;
 	font-family: "Avenir Next";
 }
+
+/* logo + menu area */
 #top {
 	position: absolute;
 	top:0;
@@ -34,12 +36,25 @@ body {
 	@media(min-width: 768px) { height:100%;  lost-utility: clearfix; }
 	@media(max-width: 767px) { padding-top:6rem; }
 }
-#left { background-color: $beige; }
-#right { background-color: $lbeige; }	
+
+#left { background-color: $beige; 
+	.dark {
+		background-color: $dbeige;
+		input {
+			background-color: $beige;
+		}
+	}
+}
+#right { background-color: $lbeige; }
+
+
 #left, #right {
 	@media(min-width: 768px) { lost-column:1/2; }
 	height: inherit;
+	// only one element in the left/right column so that vertical centering works 
+	// and left/right padding is consistent 
 	.wrapper {
+		width:90%;
 		max-width: 600px;
 		margin:0 auto;
 		text-align:center;
@@ -51,23 +66,24 @@ body {
 	.wrapper.small {
 		max-width: 400px;
 	}
+	.wrapper.full {
+		max-width:100%;
+		width:100%;
+	}
 }
 /*
-each column can have these 2 states
 .center is when you have pretty minimal content and you want it in the middle
 .fixed-top is when you have content that needs to scroll or starts from the top.
 */
-
 #left.center, #right.center {
 	@media(min-width: 768px) { lost-align: center; }
 	@media(max-width: 767px) { padding:4rem 2rem; }
 }
 #left.fixed-top, #right.fixed-top {
-	@media(min-width: 768px) { position: relative; top:10%; height:90%; overflow:auto; }
+	@media(min-width: 768px) { position: relative; top:100px; height:calc(99.99% - 100px); overflow:auto; }
 	@media(max-width: 767px) { padding:4rem 2rem; }	
 }
 
-
-
 @import "signin";
 @import "albums";
+@import "new-album";
