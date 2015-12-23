@@ -331,6 +331,96 @@ body {
   #left.fixed-top, #right.fixed-top {
     padding: 4rem 2rem; } }
 
+.profile .wrapper {
+  width: 90%; }
+  .profile .wrapper .profile {
+    margin-bottom: 2rem;
+    *zoom: 1; }
+  .profile .wrapper .profile:before {
+  content: '';
+  display: table; }
+  .profile .wrapper .profile:after {
+  content: '';
+  display: table;
+  clear: both; }
+    .profile .wrapper .profile .col1 {
+      width: calc(99.99% * 1/4 - (0px - 0px * 1/4)); }
+    .profile .wrapper .profile .col1:nth-child(n) {
+  float: left;
+  margin-right: 0px;
+  clear: none; }
+    .profile .wrapper .profile .col1:last-child {
+  margin-right: 0; }
+    .profile .wrapper .profile .col1:nth-child(0n) {
+  margin-right: 0; }
+    .profile .wrapper .profile .col1:nth-child(0n + 1) {
+  clear: left; }
+    .profile .wrapper .profile .col2 {
+      width: calc(99.99% * 3/4 - (0px - 0px * 3/4)); }
+    .profile .wrapper .profile .col2:nth-child(n) {
+  float: left;
+  margin-right: 0px;
+  clear: none; }
+    .profile .wrapper .profile .col2:last-child {
+  margin-right: 0; }
+    .profile .wrapper .profile .col2:nth-child(0n) {
+  margin-right: 0; }
+    .profile .wrapper .profile .col2:nth-child(0n + 1) {
+  clear: left; }
+  .profile .wrapper .full-row {
+    background-color: #FAF4DD; }
+  .profile .wrapper .album {
+    list-style-type: none;
+    *zoom: 1;
+    margin-bottom: 1rem; }
+  .profile .wrapper .album:before {
+  content: '';
+  display: table; }
+  .profile .wrapper .album:after {
+  content: '';
+  display: table;
+  clear: both; }
+    .profile .wrapper .album .col1 {
+      width: calc(99.99% * 1/4 - (0px - 0px * 1/4)); }
+    .profile .wrapper .album .col1:nth-child(n) {
+  float: left;
+  margin-right: 0px;
+  clear: none; }
+    .profile .wrapper .album .col1:last-child {
+  margin-right: 0; }
+    .profile .wrapper .album .col1:nth-child(0n) {
+  margin-right: 0; }
+    .profile .wrapper .album .col1:nth-child(0n + 1) {
+  clear: left; }
+    .profile .wrapper .album .col2 {
+      width: calc(99.99% * 2/4 - (0px - 0px * 2/4));
+      padding-top: .5rem; }
+    .profile .wrapper .album .col2:nth-child(n) {
+  float: left;
+  margin-right: 0px;
+  clear: none; }
+    .profile .wrapper .album .col2:last-child {
+  margin-right: 0; }
+    .profile .wrapper .album .col2:nth-child(0n) {
+  margin-right: 0; }
+    .profile .wrapper .album .col2:nth-child(0n + 1) {
+  clear: left; }
+      .profile .wrapper .album .col2 h2 {
+        font-size: 17px; }
+    .profile .wrapper .album .col3 {
+      width: calc(99.99% * 1/4 - (0px - 0px * 1/4));
+      padding-top: .5rem; }
+    .profile .wrapper .album .col3:nth-child(n) {
+  float: left;
+  margin-right: 0px;
+  clear: none; }
+    .profile .wrapper .album .col3:last-child {
+  margin-right: 0; }
+    .profile .wrapper .album .col3:nth-child(0n) {
+  margin-right: 0; }
+    .profile .wrapper .album .col3:nth-child(0n + 1) {
+  clear: left; }
+
 .albums .wrapper {
   width: 90%; }
   .albums .wrapper .profile {

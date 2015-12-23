@@ -84,6 +84,14 @@ body {
 	@media(max-width: 767px) { padding:4rem 2rem; }	
 }
 
+@import "profile";
 @import "signin";
+@import "signup";
 @import "albums";
 @import "new-album";
+@import "playlist";
+@import "radio";
+@import "mod-admins";
+@import "mod-new-albums";
+@import "mod-flags";
+@import "faq";
