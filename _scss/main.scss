@@ -22,7 +22,11 @@ body {
 		font-family: "Cherry Swash";
 		font-size:24px;
 		font-weight: normal;
-		color: $red;
+		a {
+			color: $red;
+			text-decoration: none;		
+		}
+		
 	}
 	#menu {
 		float:right;
@@ -70,6 +74,12 @@ body {
 		max-width:100%;
 		width:100%;
 	}
+}
+.wrapper > .profile {
+	margin-bottom:2rem;
+	lost-utility: clearfix;
+	.col1 {lost-column: 1/4 0; }
+	.col2 {lost-column: 3/4 0; }	
 }
 /*
 .center is when you have pretty minimal content and you want it in the middle

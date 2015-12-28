@@ -217,8 +217,12 @@ a.full-row:nth-child(1n + 1) {
 .right {
   text-align: right; }
 
-.red {
+h2.red {
   color: #E55C5C; }
+
+button.red {
+  color: white;
+  background-color: #E55C5C; }
 
 body {
   background-color: #FEFCEC;
@@ -238,8 +242,10 @@ body {
     position: relative;
     font-family: "Cherry Swash";
     font-size: 24px;
-    font-weight: normal;
-    color: #E55C5C; }
+    font-weight: normal; }
+    #top #logo a {
+      color: #E55C5C;
+      text-decoration: none; }
   #top #menu {
     float: right;
     vertical-align: center;
@@ -299,6 +305,43 @@ body {
   #left .wrapper.full, #right .wrapper.full {
     max-width: 100%;
     width: 100%; }
+
+.wrapper > .profile {
+  margin-bottom: 2rem;
+  *zoom: 1; }
+
+.wrapper > .profile:before {
+  content: '';
+  display: table; }
+
+.wrapper > .profile:after {
+  content: '';
+  display: table;
+  clear: both; }
+  .wrapper > .profile .col1 {
+    width: calc(99.99% * 1/4 - (0px - 0px * 1/4)); }
+  .wrapper > .profile .col1:nth-child(n) {
+  float: left;
+  margin-right: 0px;
+  clear: none; }
+  .wrapper > .profile .col1:last-child {
+  margin-right: 0; }
+  .wrapper > .profile .col1:nth-child(0n) {
+  margin-right: 0; }
+  .wrapper > .profile .col1:nth-child(0n + 1) {
+  clear: left; }
+  .wrapper > .profile .col2 {
+    width: calc(99.99% * 3/4 - (0px - 0px * 3/4)); }
+  .wrapper > .profile .col2:nth-child(n) {
+  float: left;
+  margin-right: 0px;
+  clear: none; }
+  .wrapper > .profile .col2:last-child {
+  margin-right: 0; }
+  .wrapper > .profile .col2:nth-child(0n) {
+  margin-right: 0; }
+  .wrapper > .profile .col2:nth-child(0n + 1) {
+  clear: left; }
 
 /*
 .center is when you have pretty minimal content and you want it in the middle
@@ -626,3 +669,10 @@ body {
         position: absolute;
         right: 0;
         top: 0; }
+
+.faq h2 {
+  padding-bottom: 1rem; }
+
+.faq li {
+  font-size: 16px;
+  padding-bottom: 1rem; }
