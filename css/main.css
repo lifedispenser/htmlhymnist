@@ -177,6 +177,9 @@ button {
   background-color: #E55C5C;
   color: white; }
 
+table {
+  width: 100%; }
+
 /* standard links */
 a {
   text-decoration: underline;
@@ -217,7 +220,7 @@ a.full-row:nth-child(1n + 1) {
 .right {
   text-align: right; }
 
-h2.red {
+h1.red, h2.red, h3.red, h4.red, h5.red {
   color: #E55C5C; }
 
 button.red {
@@ -305,6 +308,9 @@ body {
   #left .wrapper.full, #right .wrapper.full {
     max-width: 100%;
     width: 100%; }
+  #left .wrapper.padding, #right .wrapper.padding {
+    padding: 0 3rem;
+    width: calc(90% - 3rem); }
 
 .wrapper > .profile {
   margin-bottom: 2rem;
@@ -343,11 +349,65 @@ body {
   .wrapper > .profile .col2:nth-child(0n + 1) {
   clear: left; }
 
+.albums .album {
+  list-style-type: none;
+  *zoom: 1;
+  margin-bottom: 1rem; }
+
+.albums .album:before {
+  content: '';
+  display: table; }
+
+.albums .album:after {
+  content: '';
+  display: table;
+  clear: both; }
+  .albums .album .col1 {
+    width: calc(99.99% * 1/4 - (0px - 0px * 1/4)); }
+  .albums .album .col1:nth-child(n) {
+  float: left;
+  margin-right: 0px;
+  clear: none; }
+  .albums .album .col1:last-child {
+  margin-right: 0; }
+  .albums .album .col1:nth-child(0n) {
+  margin-right: 0; }
+  .albums .album .col1:nth-child(0n + 1) {
+  clear: left; }
+  .albums .album .col2 {
+    width: calc(99.99% * 2/4 - (0px - 0px * 2/4));
+    padding-top: .5rem; }
+  .albums .album .col2:nth-child(n) {
+  float: left;
+  margin-right: 0px;
+  clear: none; }
+  .albums .album .col2:last-child {
+  margin-right: 0; }
+  .albums .album .col2:nth-child(0n) {
+  margin-right: 0; }
+  .albums .album .col2:nth-child(0n + 1) {
+  clear: left; }
+    .albums .album .col2 h2 {
+      font-size: 17px; }
+  .albums .album .col3 {
+    width: calc(99.99% * 1/4 - (0px - 0px * 1/4));
+    padding-top: .5rem; }
+  .albums .album .col3:nth-child(n) {
+  float: left;
+  margin-right: 0px;
+  clear: none; }
+  .albums .album .col3:last-child {
+  margin-right: 0; }
+  .albums .album .col3:nth-child(0n) {
+  margin-right: 0; }
+  .albums .album .col3:nth-child(0n + 1) {
+  clear: left; }
+
 /*
-.center is when you have pretty minimal content and you want it in the middle
+.center is when you have pretty minimal content and you want it to reside in the middle
 .fixed-top is when you have content that needs to scroll or starts from the top.
 */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (min-height: 800px) {
   #left.center, #right.center {
     position: relative; }
   #left.center > *, #right.center > * {
@@ -363,196 +423,74 @@ body {
   #left.center, #right.center {
     padding: 4rem 2rem; } }
 
+/* hack to fix a case when the height is too small for center to give a good experience (changes to fixed-top) */
+@media (min-width: 768px) and (max-height: 800px) {
+  #left.center {
+    position: relative;
+    top: 100px;
+    height: calc(99.99% - 100px);
+    overflow: auto; } }
+
+@media (min-width: 768px) and (max-height: 800px) {
+  #right.center .wrapper {
+    position: relative;
+    top: 100px;
+    height: calc(99.99% - 100px);
+    overflow: auto; } }
+
 @media (min-width: 768px) {
-  #left.fixed-top, #right.fixed-top {
+  #left.fixed-top .wrapper, #right.fixed-top .wrapper {
     position: relative;
     top: 100px;
     height: calc(99.99% - 100px);
     overflow: auto; } }
 
 @media (max-width: 767px) {
-  #left.fixed-top, #right.fixed-top {
+  #left.fixed-top .wrapper, #right.fixed-top .wrapper {
     padding: 4rem 2rem; } }
 
-.profile .wrapper {
-  width: 90%; }
-  .profile .wrapper .profile {
-    margin-bottom: 2rem;
-    *zoom: 1; }
-  .profile .wrapper .profile:before {
+.profile .wrapper .profile {
+  margin-bottom: 2rem;
+  *zoom: 1; }
+
+.profile .wrapper .profile:before {
   content: '';
   display: table; }
-  .profile .wrapper .profile:after {
+
+.profile .wrapper .profile:after {
   content: '';
   display: table;
   clear: both; }
-    .profile .wrapper .profile .col1 {
-      width: calc(99.99% * 1/4 - (0px - 0px * 1/4)); }
-    .profile .wrapper .profile .col1:nth-child(n) {
+  .profile .wrapper .profile .col1 {
+    width: calc(99.99% * 1/4 - (0px - 0px * 1/4)); }
+  .profile .wrapper .profile .col1:nth-child(n) {
   float: left;
   margin-right: 0px;
   clear: none; }
-    .profile .wrapper .profile .col1:last-child {
+  .profile .wrapper .profile .col1:last-child {
   margin-right: 0; }
-    .profile .wrapper .profile .col1:nth-child(0n) {
+  .profile .wrapper .profile .col1:nth-child(0n) {
   margin-right: 0; }
-    .profile .wrapper .profile .col1:nth-child(0n + 1) {
+  .profile .wrapper .profile .col1:nth-child(0n + 1) {
   clear: left; }
-    .profile .wrapper .profile .col2 {
-      width: calc(99.99% * 3/4 - (0px - 0px * 3/4)); }
-    .profile .wrapper .profile .col2:nth-child(n) {
+  .profile .wrapper .profile .col2 {
+    width: calc(99.99% * 3/4 - (0px - 0px * 3/4)); }
+  .profile .wrapper .profile .col2:nth-child(n) {
   float: left;
   margin-right: 0px;
   clear: none; }
-    .profile .wrapper .profile .col2:last-child {
+  .profile .wrapper .profile .col2:last-child {
   margin-right: 0; }
-    .profile .wrapper .profile .col2:nth-child(0n) {
+  .profile .wrapper .profile .col2:nth-child(0n) {
   margin-right: 0; }
-    .profile .wrapper .profile .col2:nth-child(0n + 1) {
-  clear: left; }
-  .profile .wrapper .full-row {
-    background-color: #FAF4DD; }
-  .profile .wrapper .album {
-    list-style-type: none;
-    *zoom: 1;
-    margin-bottom: 1rem; }
-  .profile .wrapper .album:before {
-  content: '';
-  display: table; }
-  .profile .wrapper .album:after {
-  content: '';
-  display: table;
-  clear: both; }
-    .profile .wrapper .album .col1 {
-      width: calc(99.99% * 1/4 - (0px - 0px * 1/4)); }
-    .profile .wrapper .album .col1:nth-child(n) {
-  float: left;
-  margin-right: 0px;
-  clear: none; }
-    .profile .wrapper .album .col1:last-child {
-  margin-right: 0; }
-    .profile .wrapper .album .col1:nth-child(0n) {
-  margin-right: 0; }
-    .profile .wrapper .album .col1:nth-child(0n + 1) {
-  clear: left; }
-    .profile .wrapper .album .col2 {
-      width: calc(99.99% * 2/4 - (0px - 0px * 2/4));
-      padding-top: .5rem; }
-    .profile .wrapper .album .col2:nth-child(n) {
-  float: left;
-  margin-right: 0px;
-  clear: none; }
-    .profile .wrapper .album .col2:last-child {
-  margin-right: 0; }
-    .profile .wrapper .album .col2:nth-child(0n) {
-  margin-right: 0; }
-    .profile .wrapper .album .col2:nth-child(0n + 1) {
-  clear: left; }
-      .profile .wrapper .album .col2 h2 {
-        font-size: 17px; }
-    .profile .wrapper .album .col3 {
-      width: calc(99.99% * 1/4 - (0px - 0px * 1/4));
-      padding-top: .5rem; }
-    .profile .wrapper .album .col3:nth-child(n) {
-  float: left;
-  margin-right: 0px;
-  clear: none; }
-    .profile .wrapper .album .col3:last-child {
-  margin-right: 0; }
-    .profile .wrapper .album .col3:nth-child(0n) {
-  margin-right: 0; }
-    .profile .wrapper .album .col3:nth-child(0n + 1) {
+  .profile .wrapper .profile .col2:nth-child(0n + 1) {
   clear: left; }
 
-.albums .wrapper {
-  width: 90%; }
-  .albums .wrapper .profile {
-    margin-bottom: 2rem;
-    *zoom: 1; }
-  .albums .wrapper .profile:before {
-  content: '';
-  display: table; }
-  .albums .wrapper .profile:after {
-  content: '';
-  display: table;
-  clear: both; }
-    .albums .wrapper .profile .col1 {
-      width: calc(99.99% * 1/4 - (0px - 0px * 1/4)); }
-    .albums .wrapper .profile .col1:nth-child(n) {
-  float: left;
-  margin-right: 0px;
-  clear: none; }
-    .albums .wrapper .profile .col1:last-child {
-  margin-right: 0; }
-    .albums .wrapper .profile .col1:nth-child(0n) {
-  margin-right: 0; }
-    .albums .wrapper .profile .col1:nth-child(0n + 1) {
-  clear: left; }
-    .albums .wrapper .profile .col2 {
-      width: calc(99.99% * 3/4 - (0px - 0px * 3/4)); }
-    .albums .wrapper .profile .col2:nth-child(n) {
-  float: left;
-  margin-right: 0px;
-  clear: none; }
-    .albums .wrapper .profile .col2:last-child {
-  margin-right: 0; }
-    .albums .wrapper .profile .col2:nth-child(0n) {
-  margin-right: 0; }
-    .albums .wrapper .profile .col2:nth-child(0n + 1) {
-  clear: left; }
-  .albums .wrapper .full-row {
-    background-color: #FAF4DD; }
-  .albums .wrapper .album {
-    list-style-type: none;
-    *zoom: 1;
-    margin-bottom: 1rem; }
-  .albums .wrapper .album:before {
-  content: '';
-  display: table; }
-  .albums .wrapper .album:after {
-  content: '';
-  display: table;
-  clear: both; }
-    .albums .wrapper .album .col1 {
-      width: calc(99.99% * 1/4 - (0px - 0px * 1/4)); }
-    .albums .wrapper .album .col1:nth-child(n) {
-  float: left;
-  margin-right: 0px;
-  clear: none; }
-    .albums .wrapper .album .col1:last-child {
-  margin-right: 0; }
-    .albums .wrapper .album .col1:nth-child(0n) {
-  margin-right: 0; }
-    .albums .wrapper .album .col1:nth-child(0n + 1) {
-  clear: left; }
-    .albums .wrapper .album .col2 {
-      width: calc(99.99% * 2/4 - (0px - 0px * 2/4));
-      padding-top: .5rem; }
-    .albums .wrapper .album .col2:nth-child(n) {
-  float: left;
-  margin-right: 0px;
-  clear: none; }
-    .albums .wrapper .album .col2:last-child {
-  margin-right: 0; }
-    .albums .wrapper .album .col2:nth-child(0n) {
-  margin-right: 0; }
-    .albums .wrapper .album .col2:nth-child(0n + 1) {
-  clear: left; }
-      .albums .wrapper .album .col2 h2 {
-        font-size: 17px; }
-    .albums .wrapper .album .col3 {
-      width: calc(99.99% * 1/4 - (0px - 0px * 1/4));
-      padding-top: .5rem; }
-    .albums .wrapper .album .col3:nth-child(n) {
-  float: left;
-  margin-right: 0px;
-  clear: none; }
-    .albums .wrapper .album .col3:last-child {
-  margin-right: 0; }
-    .albums .wrapper .album .col3:nth-child(0n) {
-  margin-right: 0; }
-    .albums .wrapper .album .col3:nth-child(0n + 1) {
-  clear: left; }
+.profile .wrapper .full-row {
+  background-color: #FAF4DD; }
+
+.albums .wrapper .full-row {
+  background-color: #FAF4DD; }
 
 .new-album #left .add-img {
   *zoom: 1;
@@ -669,6 +607,9 @@ body {
         position: absolute;
         right: 0;
         top: 0; }
+
+.mod-admins table {
+  width: 100%; }
 
 .faq h2 {
   padding-bottom: 1rem; }

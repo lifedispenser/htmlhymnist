@@ -43,6 +43,9 @@ button {
 	background-color: $red;
 	color:white;
 }
+table {
+	width:100%;
+}
 
 /* standard links */
 a {	text-decoration: underline;	color:$black; }
@@ -58,7 +61,7 @@ a.full-row {
 .left {text-align: left; } 
 .center {text-align: center; } 
 .right {text-align: right; } 
-h2.red {
+h1.red, h2.red, h3.red, h4.red, h5.red {
 	color:$red;
 }
 button.red {

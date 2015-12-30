@@ -74,6 +74,10 @@ body {
 		max-width:100%;
 		width:100%;
 	}
+	.wrapper.padding {
+		padding:0 3rem;
+		width: calc(90% - 3rem);
+	}
 }
 .wrapper > .profile {
 	margin-bottom:2rem;
@@ -81,15 +85,40 @@ body {
 	.col1 {lost-column: 1/4 0; }
 	.col2 {lost-column: 3/4 0; }	
 }
+
+.albums .album {
+	list-style-type: none;
+	lost-utility: clearfix;
+	margin-bottom:1rem;
+	.col1 {lost-column: 1/4 0; }
+	.col2 {lost-column: 2/4 0; padding-top:.5rem;
+		h2 {
+			font-size:17px;
+		}
+	}
+	.col3 {lost-column: 1/4 0; padding-top:.5rem;}
+}
+
 /*
-.center is when you have pretty minimal content and you want it in the middle
+.center is when you have pretty minimal content and you want it to reside in the middle
 .fixed-top is when you have content that needs to scroll or starts from the top.
 */
 #left.center, #right.center {
-	@media(min-width: 768px) { lost-align: center; }
+	@media(min-width: 768px) and (min-height: 800px) { lost-align: center; }
 	@media(max-width: 767px) { padding:4rem 2rem; }
 }
-#left.fixed-top, #right.fixed-top {
+/* hack to fix a case when the height is too small for center to give a good experience (changes to fixed-top) */
+#left.center {
+	@media(min-width: 768px) and (max-height: 800px) { 
+		position: relative; top:100px; height:calc(99.99% - 100px); overflow:auto;
+	}
+}
+#right.center .wrapper {
+	@media(min-width: 768px) and (max-height: 800px) { 
+		position: relative; top:100px; height:calc(99.99% - 100px); overflow:auto;
+	}
+}
+#left.fixed-top .wrapper, #right.fixed-top .wrapper {
 	@media(min-width: 768px) { position: relative; top:100px; height:calc(99.99% - 100px); overflow:auto; }
 	@media(max-width: 767px) { padding:4rem 2rem; }	
 }

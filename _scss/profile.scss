@@ -1,6 +1,5 @@
 .profile {
 	.wrapper {
-		width:90%;
 		.profile {
 			margin-bottom:2rem;
 			lost-utility: clearfix;
@@ -9,18 +8,6 @@
 		}
 		.full-row {
 			background-color: $dbeige;
-		}
-		.album {
-			list-style-type: none;
-			lost-utility: clearfix;
-			margin-bottom:1rem;
-			.col1 {lost-column: 1/4 0; }
-			.col2 {lost-column: 2/4 0; padding-top:.5rem;
-				h2 {
-					font-size:17px;
-				}
-			}
-			.col3 {lost-column: 1/4 0; padding-top:.5rem;}
 		}
 	}
 }
